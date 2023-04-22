@@ -8,7 +8,7 @@ inquirer
     {
       type: 'input',
       name: 'logoName',
-      message: 'Please enter text, must not be more than 3 letters',
+      message: 'Please enter text, 3 letters or less',
     },
     {
       type: 'input',
@@ -28,7 +28,7 @@ inquirer
     },
   ])
   .then((data) => {
-    const svgPath = './dist/logo.svg';
+    const svgPath = './result/logo.svg';
     const finalLogo = makeShape(data);
 
     //Generate the svg logo here.
