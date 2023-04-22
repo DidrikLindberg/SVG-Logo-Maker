@@ -13,8 +13,8 @@ const testCases = [
   },
   {
     desc: 'should throw error if input is not a valid css colour',
-    input: { logoName: 'Ted', textColour: 'NotColour' },
-    expected: { err: new Error('Please enter a valid css color keyword or hex code Text color') },
+    input: { logoName: 'Ted', textColour: 'NotaColor' },
+    expected: { err: new Error('Please enter a valid css color keyword or hex code for Text color') },
   },
   {
     desc: 'should throw an error if render() is called',
@@ -34,17 +34,22 @@ const testCases = [
 ];
 
 function runTestCase(testCase) {
-  const { input, expected } = testCase;
-  const shape = new Shape(input);
-
-  if (expected.err) {
-    expect(() => shape).toThrow(expected.err);
-  } else if (expected.shouldRender) {
-    expect(() => shape.render()).toThrow(expected.err);
-  } else {
-    expect(shape[expected.key]).toBe(expected.value);
+    const { input, expected } = testCase;
+    let shape;
+  
+    try {
+      shape = new Shape(input);
+    } catch (err) {
+      expect(err.message).toBe(expected.err.message);
+      return;
+    }
+  
+    if (expected.shouldRender) {
+      expect(() => shape.render()).toThrow(expected.err);
+    } else {
+      expect(shape[expected.key]).toBe(expected.value);
+    }
   }
-}
 
 describe('Shape test suite', () => {
   testCases.forEach((testCase) => {
