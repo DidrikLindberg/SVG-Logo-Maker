@@ -12,9 +12,9 @@ const testCases = [
     expected: { err: new Error('Logo text cannot be more than 3 characters') },
   },
   {
-    desc: 'should throw error if input is not a vaild css colour',
+    desc: 'should throw error if input is not a valid css colour',
     input: { logoName: 'Ted', textColour: 'NotColour' },
-    expected: { err: new Error('Please enter a vaild css color keyword or hex code') },
+    expected: { err: new Error('Please enter a valid css color keyword or hex code Text color') },
   },
   {
     desc: 'should throw an error if render() is called',
@@ -38,11 +38,11 @@ function runTestCase(testCase) {
   const shape = new Shape(input);
 
   if (expected.err) {
-    expected(() => shape).toThrow(expected.err);
+    expect(() => shape).toThrow(expected.err);
   } else if (expected.shouldRender) {
-    expected(() => shape.render()).toThrow(expected.err);
+    expect(() => shape.render()).toThrow(expected.err);
   } else {
-    expected(shape[expected.key]).toBe(expected.value);
+    expect(shape[expected.key]).toBe(expected.value);
   }
 }
 

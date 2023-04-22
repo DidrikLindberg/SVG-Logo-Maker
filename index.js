@@ -17,7 +17,7 @@ inquirer
     },
     {
       type: 'input',
-      name: 'logoColour',
+      name: 'bgColour',
       message: `Please enter a colour keyword or a hexadecimal number for the logo's background colour`,
     },
     {
