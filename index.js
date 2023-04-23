@@ -12,7 +12,7 @@ inquirer
     },
     {
       type: 'input',
-      name: 'textColour',
+      name: 'textColor',
       message: `Please enter text colour keyword or a hexadecimal number for the logo's test color`,
     },
     {

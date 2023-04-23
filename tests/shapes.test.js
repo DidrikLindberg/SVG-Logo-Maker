@@ -4,7 +4,7 @@ const testCases = [
   {
     desc: 'should throw an error if input is empty',
     input: {},
-    expected: { err: new Error('Input cannot be empty') },
+    expected: { err: new Error(`Logo text cannot be empty`) },
   },
   {
     desc: 'should throw error if logo text is longer than 3y',
@@ -13,23 +13,23 @@ const testCases = [
   },
   {
     desc: 'should throw error if input is not a valid css colour',
-    input: { logoName: 'Ted', textColour: 'NotaColor' },
+    input: { logoName: 'Ted', textColor: 'NotaColor' },
     expected: { err: new Error('Please enter a valid css color keyword or hex code for Text color') },
   },
   {
     desc: 'should throw an error if render() is called',
-    input: { logoName: 'Ted', textColour: 'green', bgColour: 'purple' },
+    input: { logoName: 'Ted', textColor: 'green', bgColour: 'purple' },
     expected: { err: new Error('Child shapes must implement a render() method'), shouldRender: true },
   },
   {
     desc: 'should add background colour if it is a valid color',
-    input: { logoName: 'Ted', textColour: 'green', bgColour: 'purple' },
+    input: { logoName: 'Ted', textColor: 'green', bgColour: 'purple' },
     expected: { key: 'bgColour', value: 'purple' },
   },
   {
     desc: 'should add text colour if it is a valid color',
-    input: { logoName: 'Ted', textColour: 'red', bgColour: 'purple' },
-    expected: { key: 'textColour', value: 'red' },
+    input: { logoName: 'Ted', textColor: 'red', bgColour: 'purple' },
+    expected: { key: 'textColor', value: 'red' },
   },
 ];
 

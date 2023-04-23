@@ -6,7 +6,7 @@ describe('Triangle', () => {
     it('should return triangle string', () => {
       const triangle = new Triangle({
         logoName: 'Mel',
-        textColour: 'purple',
+        textColor: 'purple',
         bgColour: '#000',
         logoShape: 'triangle',
       });

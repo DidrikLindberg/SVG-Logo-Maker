@@ -5,7 +5,7 @@ describe('Square', () => {
     it('should render square string', () => {
       const square = new Square({
         logoName: 'Ted',
-        textColour: 'red',
+        textColor: 'red',
         bgColour: 'orange',
         logoShape: 'square',
       });
