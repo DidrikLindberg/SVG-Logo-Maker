@@ -3,6 +3,9 @@
 ## Description
 This command-line application allows users to create an svg logo by answering a series of questions (text, text color, shape color, shape). Users can initiate the user prompt in the root directory by typing "npm start" or "node index.js". If the svg logo does not meet the necessary requirements, an appropriate error message will be displayed. Upon completing all the questions, a file named logo.svg will be generated in the dist folder.
 
+## Walkthorugh video of running app
+[Walkthorugh](https://drive.google.com/file/d/1Cu4YoN5TOkh2AHgeFIBeypncwvuh5g4t/view)
+
 ## User Story
 As a freelance web developer, I want to generate a simple logo for my projects, so that I dont have to pay a graphic designer.
 
